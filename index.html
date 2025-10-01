@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TerraVision</title>
+    <link rel="stylesheet" href="/static/style.css">
+
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>TerraVision</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Beranda</a></li>
+                    <li><a href="#features">Fitur</a></li>
+                    <li><a href="#about">Tentang</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <section id="upload" class="upload">
+        <div class="container">
+            <h2>Unggah Gambar</h2>
+            <form id="upload-form" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="file">Pilih File Gambar (PNG, JPG, etc.):</label>
+                    <input type="file" id="file-input" name="file" required>
+                </div>
+                <button type="submit" class="btn">Prediksi</button>
+            </form>
+
+            
+            <div id="prediction-result" class="result">
+                <h3>Hasil Prediksi:</h3>
+                <div id="original-image-container">
+                    <h4>Gambar Asli:</h4>
+                    <img id="original-img" src="" alt="Original Image" style="max-width: 100%; height: auto;">
+                </div>
+                <div id="mask-image-container">
+                    <h4>Mask Gambar:</h4>
+                    <img id="mask-img" src="" alt="Mask Image" style="max-width: 100%; height: auto;">
+                </div>
+            </div>
+            <div id="result" style="display: none;">
+                <h3 id="prediction-text" style="display: none;">Hasil Prediksi</h3>
+                <img id="original-image" src="" alt="Original Image" class="result-image">
+                <img id="mask-image" src="" alt="Mask Image" class="result-image">
+                <p id="deforested-percentage" style="display: none;"></p>
+            </div>
+            <!-- Tombol untuk memprediksi gambar lain -->
+            <button id="predict-another-btn" class="btn" style="display: none;">Another Prediction of Image</button>
+        </div>
+    </section>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h2>Tentang Kami</h2>
+            <p>TerraVision menggunakan teknologi kecerdasan buatan untuk memberikan solusi visioner bagi bisnis Anda.</p>
+            <a href="#features" class="btn">Pelajari Lebih Lanjut</a>
+        </div>
+    </section>    
+
+    <section id="features" class="features">
+        <div class="container">
+            <h2>Fitur Kami</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <img src="static/assets/features3.jpg" alt="Fitur 1">
+                    <h3>Deteksi Deforestasi</h3>
+                    <p>Mendeteksi area yang mengalami penggundulan hutan dari citra satelit.</p>
+                </div>
+                <div class="feature-item">
+                    <img src="static/assets/features2.jpg" alt="Fitur 2">
+                    <h3>Analisis Citra</h3>
+                    <p>Memproses gambar untuk menghasilkan peta deforestasi.</p>
+                </div>
+                <div class="feature-item">
+                    <img src="static/assets/features1.jpg" alt="Fitur 3">
+                    <h3>Laporan Visual</h3>
+                    <p>Menyediakan visualisasi hasil deteksi untuk memudahkan analisis.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="container">
+            <h2>Tentang Kami</h2>
+            <p>
+                Selamat datang di <strong>TerraVision</strong>. Kami menyediakan alat untuk membantu mengidentifikasi area deforestasi melalui analisis gambar yang diunggah oleh pengguna. 
+                Walaupun kami belum dapat memantau deforestasi secara real-time, sistem kami memungkinkan Anda untuk mengunggah foto area yang ingin dianalisis. 
+            </p>
+            <p>
+                Dengan teknologi kecerdasan buatan dan model deep learning, sistem ini akan memproses gambar dan memberikan prediksi mengenai area yang mengalami deforestasi. 
+                Kami berharap teknologi ini dapat membantu meningkatkan kesadaran dan mendukung upaya pelestarian lingkungan.
+            </p>
+            <p>
+                Untuk menggunakan layanan ini, cukup unggah foto area yang ingin Anda analisis, dan sistem kami akan memberikan hasil prediksi dalam waktu singkat.
+            </p>
+        </div>
+    </section>
+
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Kontak Kami</h2>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Nama:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Pesan:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn">Kirim</button>
+            </form>
+        </div>
+    </section>
+
+     <footer>
+        <div class="container">
+            <p>&copy; 2024 TerraVision. Semua hak dilindungi.</p>
+            <div class="social-links">
+                <a href="#"><img src="static/assets/facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="static/assets/twitter.png" alt="Twitter"></a>
+                <a href="#"><img src="static/assets/linkedin.png" alt="LinkedIn"></a>
+            </div>
+        </div>
+     </footer>
+
+     <script src="static/script.js"></script>
+
+</body>
+</html>
